@@ -3,6 +3,7 @@
 	<head>
 		<link href="framework/css/main.css" rel="stylesheet" type="text/css">
 		<link href='http://fonts.googleapis.com/css?family=Lato:100,400,300' rel='stylesheet' type='text/css'>
+		<script src="Chart.js-master/Chart.js"></script>
 		<title>Factions</title>
 	</head>
 	<body>
@@ -24,11 +25,56 @@
 				<li>Faction Name: Name</li>
 				<li>Population: 0</li>
 				<li>Food: 0</li>
-				<li>Survival Days: 0</li>
-
-
-
 			</ul>
+			<div>
+			<h1>Faction Population</h1>
+		</div>
+			<div id="canvas-holder">
+			<canvas id="myChart" width="300" height="300"></canvas>
+		</div>
+		<script>
+
+			var pieData = [
+					{
+						value: 5,
+						color:"#F7464A",
+						highlight: "#FFC870",
+						label: "Farmers"
+					},
+					{
+						value: 2,
+						color: "#F7464A",
+						highlight: "#FFC870",
+						label: "Hunters"
+					},
+					{
+						value: 3,
+						color: "#F7464A",
+						highlight: "#FFC870",
+						label: "Defense"
+					},
+					{
+						value: 2,
+						color: "#F7464A",
+						highlight: "#FFC870",
+						label: "Children"
+					},
+					{
+						value: 3,
+						color: "#F7464A",
+						highlight: "#FFC870",
+						label: "Misc"
+					}
+
+				];
+				window.onload = function(){
+					var ctx = document.getElementById("myChart").getContext("2d");
+					window.myPie = new Chart(ctx).Pie(pieData);
+				};
+
+
+
+		</script>
 			</div>
 		</div>
 
